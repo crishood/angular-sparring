@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'routing',
+    redirectTo: 'childing',
     pathMatch: 'full',
   },
   {
@@ -11,6 +11,13 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./modules/routing/routing.routes').then(
         (mod) => mod.routingRoutes
+      ),
+  },
+  {
+    path: 'childing',
+    loadChildren: () =>
+      import('./modules/childing/childing.routes').then(
+        (mod) => mod.childingRoutes
       ),
   },
 ];
