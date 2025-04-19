@@ -1,12 +1,52 @@
 <h3>Content</h3>
 <app-tabs>
-  <ng-template tab [name]="'First Tab'" [dataTest]="'tab-1'">
+  <ng-template
+    tab
+    name="First Tab"
+    dataTest="tab-1"
+    comment="Camina en verdad, aunque todos corran tras la sombra."
+    let-comment="comment"
+  >
     <h4>First Tab</h4>
+    @if (comment) {
+      <span>{{ comment }}</span>
+    }
+    <p>This is the content for the first tab</p>
   </ng-template>
-  <ng-template tab [name]="'Second Tab'" [dataTest]="'tab-2'">
+  <ng-template
+    tab
+    name="Second Tab"
+    dataTest="tab-2"
+    comment="El necio alza la voz, pero el sabio edifica en silencio."
+    let-comment="comment"
+  >
     <h4>Second Tab</h4>
+    @if (comment) {
+      <span>{{ comment }}</span>
+    }
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium sed
+      perspiciatis saepe inventore consequatur labore, molestias iusto eaque?
+      Vitae exercitationem placeat perferendis, minus vero maxime! Delectus
+      quidem iusto quibusdam sed?
+    </p>
   </ng-template>
-  <ng-template tab [name]="'Third Tab'" [dataTest]="'tab-3'">
+  <ng-template
+    tab
+    name="Third Tab"
+    dataTest="tab-3"
+    comment="Bendito el que siembra amor, pues cosechará eternidad."
+    let-comment="comment"
+  >
     <h4>Third Tab</h4>
+    @if (comment) {
+      <span>{{ comment }}</span>
+    }
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam odit iure
+      quisquam corporis voluptatum soluta nostrum, assumenda maxime,
+      consequuntur deleniti exercitationem? Ipsum dolorem officiis reiciendis?
+      Repellendus at laudantium quia molestias.
+    </p>
   </ng-template>
 </app-tabs>
