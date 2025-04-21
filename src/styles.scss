@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+.tabs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 16px;
+}
+
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tab-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #f0f0f0;
+  cursor: pointer;
+  border-radius: 4px;
+
+  &.active {
+    background: #007bff;
+    color: white;
+  }
+
+  &:hover:not(.active) {
+    background: #e0e0e0;
+  }
+}
