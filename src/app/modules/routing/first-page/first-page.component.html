@@ -1,10 +1,12 @@
+@let creditCardErrorMessage = creditCardControl.errors?.['invalidcreditcard']?.message;
 <div class="first-page">
-  @if(creditCardControl.errors){ @let errors = creditCardControl.errors; @if
-  (errors['invalidLength']) {
-  <p>{{ errors["invalidLength"].message }}</p>
-  } @if (errors['invalidStart']) {
-  <p>{{ errors["invalidStart"].message }}</p>
-  } }
+  <h2>Directive to validate credit card number</h2>
+  @if (hasErrors) {
+    <div class="errors">
+      <span>Errors: </span>
+      {{creditCardErrorMessage}}
+    </div>
+  }
 
   <input
     type="password"
@@ -13,4 +15,6 @@
   />
   <p>Value for debugging:</p>
   {{ creditCardControl.value }}
+  <p>Value length:</p>
+  {{ creditCardControl.value.length }}
 </div>

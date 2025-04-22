@@ -24,22 +24,22 @@ export class CreditCardDirective implements Validator {
     const isSixteenDigits = /^[0-9]{16}$/.test(value);
     const startsWithValidDigit = /^[4|5]/.test(value);
 
-    if (!startsWithValidDigit) {
-      return {
-        invalidStart: {
-          message: 'Card number must start with 4 or 5.',
-        },
-      };
-    }
+    switch (true) {
+      case !startsWithValidDigit:
+        return {
+          invalidcreditcard: {
+            message: 'Card number must start with 4 or 5.',
+          },
+        };
 
-    if (!isSixteenDigits) {
-      return {
-        invalidLength: {
-          message: 'Card number must be exactly 16 digits.',
-        },
-      };
+      case !isSixteenDigits:
+        return {
+          invalidcreditcard: {
+            message: 'Card number must be exactly 16 digits.',
+          },
+        };
+      default:
+        return null;
     }
-
-    return null;
   }
 }

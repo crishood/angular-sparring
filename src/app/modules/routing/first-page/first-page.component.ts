@@ -10,4 +10,8 @@ import { UntypedFormControl, ReactiveFormsModule } from '@angular/forms';
 })
 export class FirstPageComponent {
   creditCardControl = new UntypedFormControl('');
+
+  get hasErrors() {
+    return this.creditCardControl.touched && this.creditCardControl.errors;
+  }
 }
