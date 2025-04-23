@@ -20,6 +20,13 @@ export const routingRoutes: Routes = [
             (c) => c.SecondPageComponent
           ),
       },
+      {
+        path: 'third-page',
+        loadComponent: () =>
+          import('./third-page/third-page.component').then(
+            (c) => c.ThirdPageComponent
+          ),
+      },
       { path: '', redirectTo: 'first-page', pathMatch: 'full' },
     ],
   },

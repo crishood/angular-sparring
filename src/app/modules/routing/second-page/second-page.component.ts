@@ -1,11 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-second-page',
   imports: [],
   templateUrl: './second-page.component.html',
-  styleUrl: './second-page.component.scss'
+  styleUrl: './second-page.component.scss',
 })
-export class SecondPageComponent {
+export class SecondPageComponent implements OnInit {
+  public form: UntypedFormGroup;
 
+  private _formBuilder = inject(UntypedFormBuilder);
+
+  ngOnInit(): void {
+    this._setForm();
+  }
+
+  private _setForm() {
+    this.form = this._formBuilder.group({
+      name: [],
+      email: [],
+      phone_number: [],
+      city: [],
+      color: [],
+    });
+  }
 }

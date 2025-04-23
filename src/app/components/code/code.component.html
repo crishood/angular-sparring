@@ -1,0 +1,9 @@
+<div class="otp">
+  <div class="code">
+    @for (item of inputs; track item; let i = $index) {
+      <div class="input-code">
+        <input #inputEl type="number" [attr.maxlength]="1" />
+      </div>
+    }
+  </div>
+</div>
