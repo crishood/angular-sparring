@@ -1,8 +1,18 @@
 <div class="otp">
   <div class="code">
-    @for (item of inputs; track item; let i = $index) {
+    @for (item of values; track item; let i = $index) {
       <div class="input-code">
-        <input #inputEl type="number" [attr.maxlength]="1" />
+        <input
+          #inputEl
+          type="number"
+          [value]="value"
+          maxlength="1"
+          min="0"
+          max="9"
+          inputmode="numeric"
+          (Keydown)="onKeydown($event, i)"
+          (input)="onInput($event, i)"
+        />
       </div>
     }
   </div>

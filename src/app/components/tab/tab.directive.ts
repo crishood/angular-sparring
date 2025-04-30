@@ -6,9 +6,9 @@ import { TabModel } from '../../models/tab.model';
   standalone: true,
 })
 export class TabDirective {
-  name = input.required<string>();
-  dataTest = input.required<string>();
-  comment = input<string>();
+  public name = input.required<string>();
+  public dataTest = input.required<string>();
+  public comment = input<string>();
 
   public templateRef = inject(TemplateRef<TabModel>);
 }

@@ -1,6 +1,7 @@
 <div class="third-page">
   <h2>OTP Code</h2>
   <div class="otp">
-    <app-code [length]="3"></app-code>
+    <app-code [length]="4" formControlName="otpCode"></app-code>
+    {{ otpCode.value }}
   </div>
 </div>

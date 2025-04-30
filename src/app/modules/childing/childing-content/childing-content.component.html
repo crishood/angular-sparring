@@ -12,6 +12,18 @@
       <span>{{ comment }}</span>
     }
     <p>This is the content for the first tab</p>
+    <app-notification>
+      <ng-template
+        appNotification
+        notificationType="info"
+        message="You are doing great"
+        let-message="message"
+      >
+        <p>
+          {{ message }}
+        </p>
+      </ng-template>
+    </app-notification>
   </ng-template>
   <ng-template
     tab
@@ -30,6 +42,18 @@
       Vitae exercitationem placeat perferendis, minus vero maxime! Delectus
       quidem iusto quibusdam sed?
     </p>
+    <app-notification>
+      <ng-template
+        appNotification
+        notificationType="error"
+        message="Some errors"
+        let-message="message"
+      >
+        <p>
+          {{ message }}
+        </p>
+      </ng-template>
+    </app-notification>
   </ng-template>
   <ng-template
     tab
@@ -48,5 +72,17 @@
       consequuntur deleniti exercitationem? Ipsum dolorem officiis reiciendis?
       Repellendus at laudantium quia molestias.
     </p>
+    <app-notification>
+      <ng-template
+        appNotification
+        notificationType="success"
+        message="You are the senior dev"
+        let-message="message"
+      >
+        <p>
+          {{ message }}
+        </p>
+      </ng-template>
+    </app-notification>
   </ng-template>
 </app-tabs>

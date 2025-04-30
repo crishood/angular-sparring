@@ -1,11 +1,11 @@
 <div class="tabs-container">
   <div class="tabs">
-    @for (tab of tabList; track $index) {
+    @for (tab of tabChildren; track $index) {
       <button
         class="tab-button"
         [class.active]="activeTabIndex === $index"
         (click)="selectTab($index)"
-        [attr.data-test]=""
+        [attr.data-test]="tab.dataTest()"
       >
         {{ tab.name() }}
       </button>
@@ -13,11 +13,13 @@
   </div>
 
   <div class="content">
-    @if (tabList.length > 0) {
+    @if (tabChildren.length > 0) {
       <ng-container
-        [ngTemplateOutlet]="tabList[activeTabIndex].templateRef"
+        [ngTemplateOutlet]="
+          tabChildren.get(activeTabIndex)?.templateRef ?? null
+        "
         [ngTemplateOutletContext]="{
-          comment: tabList[activeTabIndex].comment()
+          comment: tabChildren.get(activeTabIndex)?.comment()
         }"
       >
       </ng-container>

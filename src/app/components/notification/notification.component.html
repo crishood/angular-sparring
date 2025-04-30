@@ -1,0 +1,9 @@
+<div class="notification" [ngClass]="notification.notificationType()">
+  <ng-container
+    [ngTemplateOutlet]="notification.templateRef"
+    [ngTemplateOutletContext]="{
+      message: notification.message()
+    }"
+  >
+  </ng-container>
+</div>

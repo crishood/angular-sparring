@@ -27,3 +27,15 @@
     background: #e0e0e0;
   }
 }
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button {
+  height: auto;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}

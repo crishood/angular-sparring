@@ -1,0 +1,15 @@
+.notification {
+  width: fit-content;
+  padding: 5px 10px;
+  border-radius: 7px;
+  border: solid 2px;
+}
+.notification.info {
+  border-color: cornflowerblue;
+}
+.notification.error {
+  border-color: orangered;
+}
+.notification.success {
+  border-color: springgreen;
+}

@@ -1,3 +1,3 @@
 export interface TabModel {
-  comment: string;
+  comment?: string;
 }
