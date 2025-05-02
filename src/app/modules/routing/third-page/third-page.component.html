@@ -1,7 +1,18 @@
 <div class="third-page">
-  <h2>OTP Code</h2>
-  <div class="otp">
-    <app-code [length]="4" formControlName="otpCode"></app-code>
-    {{ otpCode.value }}
-  </div>
+  <h2>Dynamic Form</h2>
+  <app-dynamic-form formTitle="My projected form" (submit)="onSubmit($event)">
+    <ng-template let-form="form">
+      <div class="form-fields">
+        <label>
+          Name:
+          <input type="text" [formControl]="form.get('name')" />
+        </label>
+        <label>
+          Last Name:
+          <input type="text" [formControl]="form.get('lastName')" />
+        </label>
+        <button type="submit">Submit</button>
+      </div>
+    </ng-template>
+  </app-dynamic-form>
 </div>

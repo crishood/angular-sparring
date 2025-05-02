@@ -1,0 +1,9 @@
+<div class="dynamic-form">
+  <h2>{{ formTitle() }}</h2>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <ng-container
+      [ngTemplateOutlet]="fields"
+      [ngTemplateOutletContext]="{ form: form }"
+    ></ng-container>
+  </form>
+</div>

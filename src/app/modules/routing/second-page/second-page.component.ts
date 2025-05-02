@@ -1,9 +1,10 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { CardComponent } from '../../../components/card/card.component';
 
 @Component({
   selector: 'app-second-page',
-  imports: [],
+  imports: [CardComponent],
   templateUrl: './second-page.component.html',
   styleUrl: './second-page.component.scss',
 })

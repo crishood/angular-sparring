@@ -1,10 +1,4 @@
-import {
-  AfterContentInit,
-  Component,
-  ContentChildren,
-  contentChildren,
-  QueryList,
-} from '@angular/core';
+import { Component, ContentChildren, QueryList } from '@angular/core';
 import { TabDirective } from './tab.directive';
 import { CommonModule } from '@angular/common';
 
